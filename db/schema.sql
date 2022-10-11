@@ -1,3 +1,2 @@
-DROP DATABASE IF EXISTS example_db;
-
-CREATE DATABASE example_db;
+DROP DATABASE IF EXISTS trivia_db;
+CREATE DATABASE trivia_db;
