@@ -1,8 +1,9 @@
 const sequelize = require('../config/connection');
-const { User, Project } = require('../models');
+const { User, Quiz, Project } = require('../models');
 
 const userData = require('./userData.json');
 const projectData = require('./projectData.json');
+const quizData = require('./quizData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -18,6 +19,7 @@ const seedDatabase = async () => {
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
+  const quiz = await Quiz.bulkCreate(quizData)
 
   process.exit(0);
 };
