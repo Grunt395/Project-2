@@ -4,12 +4,14 @@ const { User } = require('../../models');
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
-
+    let userDataLength = await User.findAll();
+    userDataLength = userDataLength.map((q) => q.get({ plain: true }));
+console.log(userDataLength.length)
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      res.status(200).json({ user_id: userDataLength.length});
     });
   } catch (err) {
     res.status(400).json(err);

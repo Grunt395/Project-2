@@ -85,7 +85,7 @@ router.get('/project/:id', async (req, res) => {
 //     res.status(500).json(err);
 //   }
 // });
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/quiz/:id', withAuth, async (req, res) => {
 try {
   // Get all projects and JOIN with user data
   const quizData = await Quiz.findAll();
@@ -96,6 +96,7 @@ try {
   // Pass serialized data and session flag into template
   res.render('homepage', { 
     quiz, 
+    user_id: req.params.id,
     logged_in: req.session.logged_in 
   });
 } catch (err) {
