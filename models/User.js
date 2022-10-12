@@ -35,6 +35,11 @@ User.init(
         len: [8],
       },
     },
+    score: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    }
   },
   {
     hooks: {
