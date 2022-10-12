@@ -37,7 +37,11 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      const data = await response.json();
+  console.log(data)
+     
+      document.location.replace(`/quiz/${data.user_id}`);
+
     } else {
       alert(response.statusText);
     }

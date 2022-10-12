@@ -7,7 +7,8 @@
 // console.log(document.querySelectorAll("#check-false"))
 
 const submit = document.getElementById("submitQuiz")
-
+const userId = document.getElementById('userId')
+console.log(userId.value)
 submit.addEventListener("click", async function (event) {
     // alert("test")
     event.preventDefault()
@@ -21,7 +22,7 @@ submit.addEventListener("click", async function (event) {
     console.log(userAnswers)
     const response = await fetch(`/api/quiz`, {
         method: 'POST',
-        body: JSON.stringify({answer: userAnswers }),
+        body: JSON.stringify({answer: userAnswers, user_id: userId.value }),
         headers: {
           'Content-Type': 'application/json',
         },
