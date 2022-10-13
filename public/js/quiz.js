@@ -29,6 +29,7 @@ submit.addEventListener("click", async function (event) {
       });
       if (response.ok) {
         alert('submited answers');
+        document.location.replace(`/score/${userId.value}`);
       } else {
         alert('Failed to submit answers');
       }
