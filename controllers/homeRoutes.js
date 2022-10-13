@@ -122,12 +122,14 @@ router.get('/score/:id',  async (req, res) => {
     // Get all projects and JOIN with user data
     const scoreData = await User.findOne({ where: { id: parseInt(req.params.id) } });
     console.log(scoreData)
+    const leaderBoardData = await User.findAll({order: [["score", "DESC"]]});
+    const leaderBoard = leaderBoardData.map((user) => user.get({ plain: true }));
     // Serialize data so the template can read it
     const score = scoreData.get({ plain: true });
     console.log(score)
     // Pass serialized data and session flag into template
     res.render('scorepage', { 
-      ...score, 
+      ...score, leaderBoard,
       logged_in: req.session.logged_in 
     });
   } catch (err) {
