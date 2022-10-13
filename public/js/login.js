@@ -14,8 +14,10 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      const data = await response.json();
+      console.log(data)
       // If successful, redirect the browser to the profile page
-      document.location.replace('/profile');
+      document.location.replace(`/quiz/${data.user_id}`);
     } else {
       alert(response.statusText);
     }
@@ -37,7 +39,11 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      const data = await response.json();
+  console.log(data)
+     
+      document.location.replace(`/quiz/${data.user_id}`);
+
     } else {
       alert(response.statusText);
     }

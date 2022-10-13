@@ -1,0 +1,14 @@
+[
+    {
+        "question": "The Great Wall of China is visible from the moon.",
+        "answer": false
+    },
+    {
+        "question": "French is an official language in Canada.",
+        "answer": true
+    },
+    {
+        "question": "A scientific study on peanuts in bars found traces of over 100 unique specimens of urine.",
+        "answer": false
+    }
+]

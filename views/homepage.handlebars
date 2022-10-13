@@ -1,24 +1,38 @@
 <!-- Loop over each object in the projects array -->
-{{#each projects as |project| }}
+<input style="display:none" id="userId"
+value="{{user_id}}">
+
+{{#each quiz as |q| }}
 <div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
+  {{!-- <div class="col-md-5">
+    <h2> --}}
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/project/{{project.id}}">{{project.name}}</a>
+      {{!-- {{{get_emoji}}}
+      <a href="/project/{{q.id}}">{{q.name}}</a>
     </h2>
     <p>
-      <span for="img" aria-label="money">💲</span>
+      <span for="img" aria-label="money">💲</span> --}}
       <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
-  </div>
+      {{!-- <span class="dollar-amount">{{format_amount q.needed_funding}}</span> --}}
+      {{!-- needed!
+    </p> --}}
+    {{!-- <p>Created by {{q.user.name}} on {{format_date q.date_created}}</p> --}}
+    {{!--
+  </div> --}}
   <div class="col-md-7">
     <p>
-      {{project.description}}
+      {{q.question}}
     </p>
+    <p>
+      {{q.answer}}
+    </p>
+    <p>checked = true</p>
+    <p>unchecked = false</p>
+    <input type="checkbox" id="answer">
+
   </div>
 </div>
 {{/each}}
+{{#if logged_in}}
+<button id="submitQuiz">Submit</button>
+{{/if}}

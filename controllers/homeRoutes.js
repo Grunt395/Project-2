@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Project, User, Quiz } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -26,6 +26,23 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+// router.get('/', async (req, res) => {
+//   try {
+//     // Get all projects and JOIN with user data
+//     const quizData = await Quiz.findAll();
+
+//     // Serialize data so the template can read it
+//     const quiz = quizData.map((q) => q.get({ plain: true }));
+
+//     // Pass serialized data and session flag into template
+//     res.render('homepage', { 
+//       quiz, 
+//       logged_in: req.session.logged_in 
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get('/project/:id', async (req, res) => {
   try {
@@ -50,23 +67,41 @@ router.get('/project/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
-    });
+// router.get('/profile', withAuth, async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ['password'] },
+//       include: [{ model: Project }],
+//     });
 
-    const user = userData.get({ plain: true });
+//     const user = userData.get({ plain: true });
 
-    res.render('profile', {
-      ...user,
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+//     res.render('profile', {
+//       ...user,
+//       logged_in: true
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+router.get('/quiz/:id', withAuth, async (req, res) => {
+try {
+  // Get all projects and JOIN with user data
+  const quizData = await Quiz.findAll();
+
+  // Serialize data so the template can read it
+  const quiz = quizData.map((q) => q.get({ plain: true }));
+
+  // Pass serialized data and session flag into template
+  res.render('homepage', { 
+    quiz, 
+    user_id: req.params.id,
+    logged_in: req.session.logged_in 
+  });
+} catch (err) {
+  res.status(500).json(err);
+}
 });
 
 router.get('/login', (req, res) => {
@@ -78,5 +113,26 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+
+router.get('/score/:id',  async (req, res) => {
+  console.log("hello")
+  console.log(req.params.id)
+  try {
+    // Get all projects and JOIN with user data
+    const scoreData = await User.findOne({ where: { id: parseInt(req.params.id) } });
+    console.log(scoreData)
+    // Serialize data so the template can read it
+    const score = scoreData.get({ plain: true });
+    console.log(score)
+    // Pass serialized data and session flag into template
+    res.render('scorepage', { 
+      ...score, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  });
 
 module.exports = router;
