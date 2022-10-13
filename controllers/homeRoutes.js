@@ -114,4 +114,25 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+
+router.get('/score/:id',  async (req, res) => {
+  console.log("hello")
+  console.log(req.params.id)
+  try {
+    // Get all projects and JOIN with user data
+    const scoreData = await User.findOne({ where: { id: parseInt(req.params.id) } });
+    console.log(scoreData)
+    // Serialize data so the template can read it
+    const score = scoreData.get({ plain: true });
+    console.log(score)
+    // Pass serialized data and session flag into template
+    res.render('scorepage', { 
+      ...score, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  });
+
 module.exports = router;
