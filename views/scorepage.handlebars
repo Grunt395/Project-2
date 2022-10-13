@@ -2,3 +2,22 @@ hello
 
 <p>line 2</p>
 {{score}}{{email}}
+
+<table>
+        <thead>
+        <tr>
+            <th>Email</th>
+            <th>Score</th>
+        </tr>
+        </thead>
+        <tbody id="user-list">
+        {{!-- <script id="user-records" type="text/x-handlebars-template"> --}}
+            {{#each leaderBoard as |leader|}}
+            <tr>
+                <td>{{leader.email}}</td>
+                <td>{{leader.score}}</td>
+            </tr>
+            {{/each}}
+        {{!-- </script> --}}
+        </tbody>
+    </table>
