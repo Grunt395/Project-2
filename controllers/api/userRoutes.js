@@ -6,12 +6,12 @@ router.post('/', async (req, res) => {
     const userData = await User.create(req.body);
     let userDataLength = await User.findAll();
     userDataLength = userDataLength.map((q) => q.get({ plain: true }));
-console.log(userDataLength.length)
+    console.log(userDataLength.length)
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.status(200).json({ user_id: userDataLength.length});
+      res.status(200).json({ user_id: userDataLength.length });
     });
   } catch (err) {
     res.status(400).json(err);
@@ -21,8 +21,8 @@ console.log(userDataLength.length)
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
-console.log("test")
-console.log(userData)
+    console.log("test")
+    console.log(userData)
 
     if (!userData) {
       res
@@ -33,19 +33,19 @@ console.log(userData)
 
     const validPassword = await userData.checkPassword(req.body.password);
     console.log(validPassword)
-    
+
     if (!validPassword) {
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
-    console.log("test2")
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
-      res.json({ user: userData, message: 'You are now logged in!' });
+
+      res.json({ user_id: userData.id, user: userData, message: 'You are now logged in!' });
+
     });
 
   } catch (err) {
