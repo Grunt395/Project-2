@@ -19,6 +19,10 @@ Quiz.init(
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: false
+      },
+      category: {
+        type: DataTypes.STRING,
+        allowNull: false
       }
       
     },

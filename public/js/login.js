@@ -17,7 +17,8 @@ const loginFormHandler = async (event) => {
       const data = await response.json();
       console.log(data)
       // If successful, redirect the browser to the profile page
-      document.location.replace(`/quiz/${data.user_id}`);
+      // document.location.replace(`/quiz/${data.user_id}`);
+      document.location.replace('/categories');
     } else {
       alert(response.statusText);
     }
@@ -42,7 +43,8 @@ const signupFormHandler = async (event) => {
       const data = await response.json();
   console.log(data)
      
-      document.location.replace(`/quiz/${data.user_id}`);
+      // document.location.replace(`/quiz/${data.user_id}`);
+      document.location.replace('/categories');
 
     } else {
       alert(response.statusText);
