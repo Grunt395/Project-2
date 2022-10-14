@@ -1,4 +1,4 @@
-# eBLog
+# (Name)
   ## LicensingBadges:
   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
   ## Table of Contents 
@@ -27,8 +27,16 @@
   Ruben: https://github.com/Rubendc91
 
   Brandon: https://github.com/BT616
-  
+
   ## Testing:
   none
   ## Questions:
-  Rubendc91@gmail.com 
+  Grant: grantlew395@gmail.com
+
+  Matt: mattastik@gmail.com
+
+  Jacob: jake0211@icloud.com
+
+  Ruben: Rubendc91@gmail.com 
+
+  Brandon: bturner1138@hotmail.com
