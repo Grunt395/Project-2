@@ -10,5 +10,37 @@
     {
         "question": "A scientific study on peanuts in bars found traces of over 100 unique specimens of urine.",
         "answer": false
+    },
+    {
+        "question": "French is an official language in Canada.",
+        "correct_answer": true
+    },
+    {
+        "question": "A scientific study on peanuts in bars found traces of over 100 unique specimens of urine.",
+        "correct_answer": false
+    },
+    {
+        "question": "The color orange is named after the fruit.",
+        "correct_answer": true
+    },
+    {
+        "question": "On average, at least 1 person is killed by a drunk driver in the United States every hour.",
+        "correct_answer": true
+    },
+    {
+        "question": "Dihydrogen Monoxide was banned due to health risks after being discovered in 1983 inside swimming pools and drinking water.",
+        "correct_answer": false
+    },
+    {
+        "question": "Slovakia is a member of European Union-",
+        "correct_answer": true
+    },
+    {
+        "question": "The mitochondria is the powerhouse of the cell.",
+        "correct_answer": true
+    },
+    {
+        "question": "Ping-Pong originated in England",
+        "correct_answer": true
     }
 ]
