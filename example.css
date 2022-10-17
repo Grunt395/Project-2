@@ -1,0 +1,21 @@
+.media{
+  margin: 20px;
+}
+body{
+  background-color: azure;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.card{
+  border: 1px solid rgb(201, 201, 201);
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+  color: black;
+  max-width: 100%;
+  position: relative;
+}
+.hyperlink:hover{
+  color: red;
+}

@@ -18,9 +18,9 @@ router.get('/', async (req, res) => {
     const projects = projectData.map((project) => project.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      projects, 
-      logged_in: req.session.logged_in 
+    res.render('homepage', {
+      projects,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -85,23 +85,27 @@ router.get('/project/:id', async (req, res) => {
 //     res.status(500).json(err);
 //   }
 // });
-router.get('/quiz/:id', withAuth, async (req, res) => {
-try {
-  // Get all projects and JOIN with user data
-  const quizData = await Quiz.findAll();
+router.get('/quiz/:id/:category', withAuth, async (req, res) => {
+  try {
+    // Get all projects and JOIN with user data
+    const quizData = await Quiz.findAll({
+      where: {
+        category: req.params.category
+      },
+    });
 
-  // Serialize data so the template can read it
-  const quiz = quizData.map((q) => q.get({ plain: true }));
+    // Serialize data so the template can read it
+    const quiz = quizData.map((q) => q.get({ plain: true }));
 
-  // Pass serialized data and session flag into template
-  res.render('homepage', { 
-    quiz, 
-    user_id: req.params.id,
-    logged_in: req.session.logged_in 
-  });
-} catch (err) {
-  res.status(500).json(err);
-}
+    // Pass serialized data and session flag into template
+    res.render('homepage', {
+      quiz,
+      user_id: req.params.id,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get('/login', (req, res) => {
@@ -114,25 +118,45 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/categories', async (req, res) => {
 
-router.get('/score/:id',  async (req, res) => {
+  const categoryData = await Quiz.findAll({ attributes: ['category'] });
+  let category = categoryData.map((q) => q.get({ plain: true }));
+  console.log(category)
+
+  category = category.map((q) => q.category)
+  console.log(category)
+  category = [...new Set(category)]
+  console.log(category)
+  let categories = []
+  for (let index = 0; index < category.length; index++) {
+    categories.push({ "category": category[index], "user_id": req.session.user_id})
+  }
+  console.log(categories)
+
+  res.render('categorypage', { categories });
+})
+
+router.get('/score/:id', async (req, res) => {
   console.log("hello")
   console.log(req.params.id)
   try {
     // Get all projects and JOIN with user data
     const scoreData = await User.findOne({ where: { id: parseInt(req.params.id) } });
     console.log(scoreData)
+    const leaderBoardData = await User.findAll({ order: [["score", "DESC"]] });
+    const leaderBoard = leaderBoardData.map((user) => user.get({ plain: true }));
     // Serialize data so the template can read it
     const score = scoreData.get({ plain: true });
     console.log(score)
     // Pass serialized data and session flag into template
-    res.render('scorepage', { 
-      ...score, 
-      logged_in: req.session.logged_in 
+    res.render('scorepage', {
+      ...score, leaderBoard,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
   }
-  });
+});
 
 module.exports = router;

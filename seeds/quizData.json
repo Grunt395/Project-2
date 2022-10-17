@@ -1,14 +1,82 @@
 [
     {
         "question": "The Great Wall of China is visible from the moon.",
-        "answer": false
+        "answer": false,
+        "category":"general"
     },
     {
         "question": "French is an official language in Canada.",
-        "answer": true
+        "answer": true,
+        "category":"general"
     },
     {
         "question": "A scientific study on peanuts in bars found traces of over 100 unique specimens of urine.",
-        "answer": false
+        "answer": false,
+        "category":"general"
+    },
+    {
+        "question": "pluto is a planet",
+        "correct_answer": false,
+        "category":"general"
+    },
+    {
+        "question": "There are 151 original pokemon",
+        "correct_answer": true,
+        "category":"general"
+    },
+
+
+    {
+        "question": "A scientific study on peanuts in bars found traces of over 100 unique specimens of urine.",
+        "correct_answer": false,
+        "category":"test2"
+    },
+    {
+        "question": "The color orange is named after the fruit.",
+        "correct_answer": true,
+        "category":"test2"
+    },
+    {
+        "question": "On average, at least 1 person is killed by a drunk driver in the United States every hour.",
+        "correct_answer": true,
+        "category":"test2"
+    },
+    {
+        "question": "Eggplant is a vegetable",
+        "correct_answer": false,
+        "category":"test2"
+    },
+    {
+        "question": "there are 86400 seconds in a day",
+        "correct_answer": true,
+        "category":"test2"
+    },
+
+    {
+        "question": "Dihydrogen Monoxide was banned due to health risks after being discovered in 1983 inside swimming pools and drinking water.",
+        "correct_answer": false,
+        "category":"test"
+    },
+    {
+        "question": "Slovakia is a member of European Union-",
+        "correct_answer": true,
+        "category":"test"
+    },
+    {
+        "question": "The mitochondria is the powerhouse of the cell.",
+        "correct_answer": true,
+        "category":"test"
+
+    },
+    {
+        "question": "Ping-Pong originated in England",
+        "correct_answer": true,
+        "category":"test"
+    },
+    {
+        "question": "Group of crows is known as a murder",
+        "correct_answer": true,
+        "category":"test" 
     }
+
 ]

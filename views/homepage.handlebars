@@ -1,24 +1,44 @@
 <!-- Loop over each object in the projects array -->
+{{#if logged_in}}
 <input style="display:none" id="userId"
 value="{{user_id}}">
 
+
+
+<section>
+
+<section class="section">
+
+
 {{#each quiz as |q| }}
-<div class="row mb-4 project">
-  {{!-- <div class="col-md-5">
-    <h2> --}}
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{!-- {{{get_emoji}}}
-      <a href="/project/{{q.id}}">{{q.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span> --}}
-      <!-- Pass needed_funding value to the helper function -->
-      {{!-- <span class="dollar-amount">{{format_amount q.needed_funding}}</span> --}}
-      {{!-- needed!
-    </p> --}}
-    {{!-- <p>Created by {{q.user.name}} on {{format_date q.date_created}}</p> --}}
-    {{!--
-  </div> --}}
+<div class="container">
+      <div class="column is-4-tablet is-3-desktop"></div>    
+      <div class="card">     
+        <div class="card-content">        
+          <div class="media">        
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+               <p>
+      {{q.question}}
+    </p>
+   
+
+            </div>
+          </div>
+          <div class="content">
+               <p>checked = true</p>
+    <p>unchecked = false</p>
+    <input type="checkbox" id="answer">
+          </div>
+        </div>
+      </div>
+    </div>
+{{!-- <div class="row mb-4 project">
+
   <div class="col-md-7">
     <p>
       {{q.question}}
@@ -30,9 +50,10 @@ value="{{user_id}}">
     <p>unchecked = false</p>
     <input type="checkbox" id="answer">
 
-  </div>
-</div>
+    
+</div> --}}
 {{/each}}
-{{#if logged_in}}
+</section>
+
 <button id="submitQuiz">Submit</button>
 {{/if}}
