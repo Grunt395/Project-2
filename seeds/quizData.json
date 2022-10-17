@@ -2,81 +2,151 @@
     {
         "question": "The Great Wall of China is visible from the moon.",
         "answer": false,
-        "category":"general"
-    },
-    {
-        "question": "French is an official language in Canada.",
-        "answer": true,
-        "category":"general"
+        "category": "general"
     },
     {
         "question": "A scientific study on peanuts in bars found traces of over 100 unique specimens of urine.",
         "answer": false,
-        "category":"general"
-    },
-    {
-        "question": "pluto is a planet",
-        "correct_answer": false,
-        "category":"general"
+        "category": "general"
     },
     {
         "question": "There are 151 original pokemon",
-        "correct_answer": true,
-        "category":"general"
+        "answer": true,
+        "category": "general"
     },
-
-
     {
-        "question": "A scientific study on peanuts in bars found traces of over 100 unique specimens of urine.",
-        "correct_answer": false,
-        "category":"test2"
+        "question": "When you cry in space, your tears stick to your face.",
+        "answer": true,
+        "category": "general"
     },
     {
         "question": "The color orange is named after the fruit.",
-        "correct_answer": true,
-        "category":"test2"
-    },
-    {
-        "question": "On average, at least 1 person is killed by a drunk driver in the United States every hour.",
-        "correct_answer": true,
-        "category":"test2"
+        "answer": true,
+        "category": "general"
     },
     {
         "question": "Eggplant is a vegetable",
-        "correct_answer": false,
-        "category":"test2"
+        "answer": false,
+        "category": "general"
     },
     {
         "question": "there are 86400 seconds in a day",
-        "correct_answer": true,
-        "category":"test2"
-    },
-
-    {
-        "question": "Dihydrogen Monoxide was banned due to health risks after being discovered in 1983 inside swimming pools and drinking water.",
-        "correct_answer": false,
-        "category":"test"
-    },
-    {
-        "question": "Slovakia is a member of European Union-",
-        "correct_answer": true,
-        "category":"test"
+        "answer": true,
+        "category": "general"
     },
     {
         "question": "The mitochondria is the powerhouse of the cell.",
-        "correct_answer": true,
-        "category":"test"
-
+        "answer": true,
+        "category": "general"
     },
     {
         "question": "Ping-Pong originated in England",
-        "correct_answer": true,
-        "category":"test"
+        "answer": true,
+        "category": "general"
     },
     {
         "question": "Group of crows is known as a murder",
-        "correct_answer": true,
-        "category":"test" 
+        "answer": true,
+        "category": "general"
+    },
+    {
+        "question": "Salt is 100% composed of Sodium.",
+        "answer": false,
+        "category": "Science & Nature"
+    },
+    {
+        "question": "An atom contains a nucleus.",
+        "answer": true,
+        "category": "Science & Nature"
+    },
+    {
+        "question": "An exothermic reaction is a chemical reaction that releases energy by radiating electricity.",
+        "answer": false,
+        "category": "Science & Nature"
+    },
+    {
+        "question": "An Astronomical Unit is the distance between Earth and the Moon.",
+        "answer": false,
+        "category": "Science & Nature"
+    },
+    {
+        "question": "An average human can go two weeks without water.",
+        "answer": false,
+        "category": "Science & Nature"
+    },
+    {
+        "question": "Celiac Disease is a disease that effects the heart, causing those effected to be unable to eat meat.",
+        "answer": false,
+        "category": "Science & Nature"
+    },
+    {
+        "question": "Psychology is the science of behavior and mind.",
+        "answer": true,
+        "category": "Science & Nature"
+    },
+    {
+        "question": "Water always boils at 100°C, 212°F, 373.15K, no matter where you are.",
+        "answer": false,
+        "category": "Science & Nature"
+    },
+    {
+        "question": "Not including false teeth; A human has two sets of teeth in their lifetime.",
+        "answer": true,
+        "category": "Science & Nature"
+    },
+    {
+        "question": "A plant that has a life cycle for more than a year is known as an annual.",
+        "answer": false,
+        "category": "Science & Nature"
+    },
+    {
+        "question": "Leonardo DiCaprio won an Oscar for Best Actor in 2004&#039;s 'The Aviator'.",
+        "answer": false,
+        "category": "Entertainment: Film"
+    },
+    {
+        "question": "Matt Damon played an astronaut stranded on an extraterrestrial planet in both of the movies Interstellar and The Martian.",
+        "answer": true,
+        "category": "Entertainment: Film"
+    },
+    {
+        "question": "The 2010 film 'The Social Network' is a biographical drama film about MySpace founder Tom Anderson.",
+        "answer": false,
+        "category": "Entertainment: Film"
+    },
+    {
+        "question": "The word 'Inception' came from the 2010 blockbuster hit 'Inception'.",
+        "answer": false,
+        "category": "Entertainment: Film"
+    },
+    {
+        "question": "In Alfred Hitchcock&#039;s film &#039;Psycho&#039; it is said he used chocolate syrup to simulate the blood in the famous shower scene from ",
+        "answer": true,
+        "category": "Entertainment: Film"
+    },
+    {
+        "question": "In the original Star Wars trilogy, David Prowse was the actor who physically portrayed Darth Vader.",
+        "answer": true,
+        "category": "Entertainment: Film"
+    },
+    {
+        "question": "Brandon Routh plays the titular character in the movie 'John Wick'.",
+        "answer": false,
+        "category": "Entertainment: Film"
+    },
+    {
+        "question": "George Lucas directed the entire original Star Wars trilogy.",
+        "answer": false,
+        "category": "Entertainment: Film"
+    },
+    {
+        "question": "'Minions' was released on the June 10th, 2015.",
+        "answer": false,
+        "category": "Entertainment: Film"
+    },
+    {
+        "question": "Actor Tommy Chong served prison time.",
+        "answer": true,
+        "category": "Entertainment: Film"
     }
-
 ]
