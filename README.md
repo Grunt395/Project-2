@@ -1,4 +1,4 @@
-# (Name)
+# (Trivia-Game)
   ## LicensingBadges:
   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
   ## Table of Contents 
@@ -28,8 +28,6 @@
 
   Brandon: https://github.com/BT616
 
-  ## Testing:
-  none
   ## Questions:
   Grant: grantlew395@gmail.com
 
